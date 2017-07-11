@@ -20,6 +20,14 @@ class ViewController: UIViewController {
 		// Dispose of any resources that can be recreated.
 	}
 
-
+	@IBOutlet weak var nameTextField: UITextField!
+	
+	@IBOutlet weak var nameLabel: UILabel!
+	
+	@IBAction func setLabel(_ sender: UIButton) {
+		if let text = nameTextField.text {
+			nameLabel.text = text
+		}
+	}
 }
 
