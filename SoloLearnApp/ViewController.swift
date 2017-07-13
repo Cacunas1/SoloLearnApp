@@ -19,15 +19,16 @@ class ViewController: UIViewController {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
-
+	
+	var item: Item?
+	
 	@IBOutlet weak var nameTextField: UITextField!
+	@IBOutlet weak var saveButton: UIBarButtonItem!
 	
-	@IBOutlet weak var nameLabel: UILabel!
-	
-	@IBAction func setLabel(_ sender: UIButton) {
-		if let text = nameTextField.text {
-			nameLabel.text = text
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if saveButton === sender as AnyObject {
+			let name = nameTextField.text ?? ""
+			item = Item(name: name)
 		}
 	}
 }
-
