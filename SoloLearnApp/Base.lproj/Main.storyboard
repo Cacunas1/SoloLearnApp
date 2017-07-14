@@ -67,7 +67,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="JhH-ib-fg1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="522" y="122"/>
+            <point key="canvasLocation" x="1275" y="121"/>
         </scene>
         <!--ToDo Items-->
         <scene sceneID="oem-rW-rdc">
@@ -77,6 +77,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" image="logo" id="VzT-BW-ast">
+                            <rect key="frame" x="0.0" y="118" width="320" height="90"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ItemTableViewCell" id="43a-D4-qit" customClass="ItemTableViewCell" customModule="SoloLearnApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="90"/>
@@ -115,7 +119,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jqb-7X-r4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-512" y="122"/>
+            <point key="canvasLocation" x="-513.75" y="121.47887323943662"/>
         </scene>
         <!--InitialVC-->
         <scene sceneID="coR-sP-R5I">
@@ -133,7 +137,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D0P-58-DV9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-999.375" y="122.53521126760563"/>
+            <point key="canvasLocation" x="-1305" y="121"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kKQ-iW-moQ">
@@ -151,9 +155,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcq-fW-i2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3" y="122"/>
+            <point key="canvasLocation" x="356" y="121"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="315" height="315"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="X2U-Ql-v9o"/>
     </inferredMetricsTieBreakers>

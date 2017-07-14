@@ -10,14 +10,15 @@ import UIKit
 
 class ItemTableViewController: UITableViewController {
 
-	var items = [Item]()
+	var items = [Item?]()
 
 	func loadSampleItems() {
-		items += [
+		items.append(contentsOf:
+		[
 			Item(name: "item1"),
 			Item(name: "item2"),
 			Item(name: "item3")
-		]
+		])
 	}
 
     override func viewDidLoad() {
@@ -27,9 +28,12 @@ class ItemTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
 
-		loadSampleItems()
+		// Load saved items
+		if let savedItems = loadItems() {
+			items.append(contentsOf: savedItems)
+		}
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,7 +58,7 @@ class ItemTableViewController: UITableViewController {
 
         let item = items[indexPath.row]
 
-        cell.nameLabel.text = item.name
+        cell.nameLabel.text = item?.name
 
         return cell
     }
@@ -68,6 +72,7 @@ class ItemTableViewController: UITableViewController {
 			let newIndexPath = IndexPath(row: items.count, section: 0)
 			items.append(item!)
 			tableView.insertRows(at: [newIndexPath], with: .bottom)
+			saveItems()
 		}
 	}
 
@@ -84,6 +89,7 @@ class ItemTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
 			items.remove(at: indexPath.row)
+			saveItems()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -124,4 +130,15 @@ class ItemTableViewController: UITableViewController {
 			
 		}
     }
+	
+	func saveItems() {
+		guard NSKeyedArchiver.archiveRootObject(items, toFile: Item.archiveURL.path) else {
+			print("Failed to save items...")
+			return
+		}
+	}
+	
+	func loadItems() -> [Item?]? {
+		return NSKeyedUnarchiver.unarchiveObject(withFile: Item.archiveURL.path) as? [Item]
+	}
 }

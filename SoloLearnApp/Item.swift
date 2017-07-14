@@ -8,10 +8,26 @@
 
 import Foundation
 
-class Item {
+class Item: NSObject, NSCoding {
 	var name:String
 	
-	init(name: String) {
+	static let dir = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+	static let archiveURL = dir.appendingPathComponent("items")
+	
+	init?(name: String) {
 		self.name = name
+		super.init()
+	}
+	
+	required convenience init?(coder aDecoder: NSCoder) {
+		guard let name = aDecoder.decodeObject(forKey: "name") as? String else {
+			print("Error: could not find saved objects")
+			return nil
+		}
+		self.init(name: name)
+	}
+	
+	func encode(with aCoder: NSCoder) {
+		aCoder.encode(name)
 	}
 }
