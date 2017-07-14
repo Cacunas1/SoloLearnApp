@@ -60,17 +60,25 @@
 		4076CD631F15291400F7EB2F /* SoloLearnApp */ = {
 			isa = PBXGroup;
 			children = (
-				4076CD641F15291400F7EB2F /* AppDelegate.swift */,
-				4076CD661F15291400F7EB2F /* ViewController.swift */,
-				4076CD681F15291400F7EB2F /* Main.storyboard */,
 				407BEE0A1F1593B200FEB933 /* Item.swift */,
 				407BEE081F15925A00FEB933 /* ItemTableViewCell.swift */,
+				407BEE0E1F15954A00FEB933 /* ItemTableViewController.swift */,
+				4076CD661F15291400F7EB2F /* ViewController.swift */,
+				4076CD681F15291400F7EB2F /* Main.storyboard */,
+				407BEE101F17AACB00FEB933 /* Supporting Files */,
+			);
+			path = SoloLearnApp;
+			sourceTree = "<group>";
+		};
+		407BEE101F17AACB00FEB933 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4076CD641F15291400F7EB2F /* AppDelegate.swift */,
 				4076CD6B1F15291400F7EB2F /* Assets.xcassets */,
 				4076CD6D1F15291400F7EB2F /* LaunchScreen.storyboard */,
 				4076CD701F15291400F7EB2F /* Info.plist */,
-				407BEE0E1F15954A00FEB933 /* ItemTableViewController.swift */,
 			);
-			path = SoloLearnApp;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

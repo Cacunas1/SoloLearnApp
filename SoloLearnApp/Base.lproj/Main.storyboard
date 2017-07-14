@@ -48,10 +48,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Item" id="n1z-o7-TVK">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uH2-eC-o0t"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uH2-eC-o0t">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="wEY-EL-aHK"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="FmY-zl-WmJ">
                             <connections>
-                                <segue destination="JhH-ib-fg1" kind="unwind" identifier="unwindToItemTableVC" unwindAction="unwindToListWithSender:" id="Z5u-Ho-Bcv"/>
+                                <segue destination="JhH-ib-fg1" kind="unwind" identifier="unwindToList" unwindAction="unwindToListWithSender:" id="Z5u-Ho-Bcv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -63,7 +67,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="JhH-ib-fg1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1895.625" y="122.53521126760563"/>
+            <point key="canvasLocation" x="522" y="122"/>
         </scene>
         <!--ToDo Items-->
         <scene sceneID="oem-rW-rdc">
@@ -92,6 +96,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="nQw-yd-qur" id="PEu-M3-WSj"/>
+                                    <segue destination="e8l-0F-EYL" kind="show" id="PEX-1k-chF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -103,19 +108,19 @@
                     <navigationItem key="navigationItem" title="ToDo Items" id="8AZ-VQ-FWc">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="eUL-V7-aY0">
                             <connections>
-                                <segue destination="e8l-0F-EYL" kind="show" id="tl2-ei-3Ve"/>
+                                <segue destination="e8l-0F-EYL" kind="show" id="X2U-Ql-v9o"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jqb-7X-r4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1.875" y="122.53521126760563"/>
+            <point key="canvasLocation" x="-512" y="122"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--InitialVC-->
         <scene sceneID="coR-sP-R5I">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2G0-L0-9F7" sceneMemberID="viewController">
+                <navigationController title="InitialVC" automaticallyAdjustsScrollViewInsets="NO" id="2G0-L0-9F7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="574-NQ-Rs5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -146,7 +151,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcq-fW-i2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="898.125" y="122.53521126760563"/>
+            <point key="canvasLocation" x="-3" y="122"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="X2U-Ql-v9o"/>
+    </inferredMetricsTieBreakers>
 </document>
